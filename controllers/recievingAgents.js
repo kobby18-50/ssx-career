@@ -13,6 +13,13 @@ const getAllAgents = async (req,res) => {
     res.status(StatusCodes.OK).json({agents, count : agents.length})
 }
 
+const getAllMyAgents = async (req,res) => {
+
+    const agents = await RecievingAgents.find({createdBy:req.user.userId})
+
+    res.status(StatusCodes.OK).json({agents, count : agents.length})
+}
+
 const getAgent = async (req,res) => {
     const { id: agentId } = req.params
 
@@ -45,6 +52,7 @@ const createAgents = async (req,res) => {
 
 export {
     getAllAgents,
+    getAllMyAgents,
     getAgent,
     createAgents
 }

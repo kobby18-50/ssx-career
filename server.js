@@ -2,6 +2,7 @@ import express from "express"
 import 'express-async-errors'
 import dotenv from "dotenv"
 import connectdb from "./db/connect.js"
+import cors from 'cors'
 dotenv.config()
 
 // middleware imports
@@ -25,11 +26,15 @@ import recievingAgentsRoutes from './routes/recievingAgentsRoutes.js'
 import subscriptionRoutes from './routes/subscriptionRoutes.js'
 
 
+
+
 // 
 app.use(morgan('tiny'))
 
 // express.json
 app.use(express.json())
+
+app.use(cors())
 
 
 // routes 

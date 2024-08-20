@@ -15,7 +15,7 @@ const getAllAgents = async (req,res) => {
 
 const getAllMyAgents = async (req,res) => {
 
-    const agents = await RecievingAgents.find({createdBy:req.user.userId})
+    const agents = await RecievingAgents.find({createdBy:req.user.industryId})
 
     res.status(StatusCodes.OK).json({agents, count : agents.length})
 }

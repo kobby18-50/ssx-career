@@ -16,7 +16,7 @@ const IPOSchema = new mongoose.Schema({
 
     issuerLogo : {
         type : String,
-        required : [true, 'Please provide an issuer logo'],
+        // required : [true, 'Please provide an issuer logo'],
     },
 
     issuerIndustry : {

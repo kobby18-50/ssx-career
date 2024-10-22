@@ -34,7 +34,7 @@ const subscribetoIPO = async (req,res) => {
     }
 
 
-     // check if ipo belongs to user
+    // check if ipo belongs to user
     //  const checkifuserbelongstoipo = await IPO.findOne({createdBy : req.user.industyId})
 
     //  if(checkifuserbelongstoipo){

@@ -31,7 +31,7 @@ const createIPO = async (req,res) => {
 const getallIPO = async (req,res) => {
 
     const currentDate = new Date()
-    const ipo = await IPO.find({ issuanceEndDate : { $gte: currentDate } })
+    const ipo = await IPO.find({ issuanceEndDate : { $gte: currentDate }, createdBy : {$ne : req.user.industryId} })
     res.status(StatusCodes.OK).json({ipo, count : ipo.length})
 }
 

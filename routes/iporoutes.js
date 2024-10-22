@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', authenticatedUser, createIPO)
 
-router.get('/', getallIPO)
+router.get('/', authenticatedUser, getallIPO)
 
 router.get('/myIPOs', authenticatedUser,  getAllmyIPO)
 
